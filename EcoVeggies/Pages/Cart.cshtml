@@ -1,0 +1,37 @@
+﻿@page
+@model EcoVeggies.Pages.CartModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-md-center">
+    <h1 id="store-name"><img id="green-cart" class="mr-2">Your cart</h1>
+</div>
+
+<div class="card-deck">
+    @foreach (var item in Model.ListCartItems)
+    {
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src=@item.ImageSrc alt=@item.Name>
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <h4 class="card-header">@item.Price</h4>
+                <a asp-page="/MoreInfo" asp-route-name="@item.Name" class="btn btn-primary">More Info</a>
+
+            </div>
+        </div>
+    }
+
+    <div class="input-group">
+        <form asp-page-handler="PlaceOrder">
+            <div class="input-group">
+                <input type="text" placeholder="Type your id" asp-for="CustomerId" />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Place Order</button>   
+                </span>
+            </div>
+        </form>
+    </div>
+
+    <a class="btn btn-primary" asp-page="/Index">Back To Products</a>
+</div>

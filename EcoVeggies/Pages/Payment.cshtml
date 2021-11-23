@@ -1,0 +1,32 @@
+﻿@page
+@model EcoVeggies.Pages.PaymentModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-md-center">
+    <h1 id="store-name"><img id="green-cart" class="mr-2">Payment</h1>
+    @* if sats med feedback *@
+</div>
+
+@if (Model.order != null)
+{
+    @foreach (var item in Model.order.ListCartItems)
+    {
+         <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src=@item.ImageSrc alt=@item.Name>
+              <div class="card-body">
+                  <h5 class="card-title">@item.Name</h5>
+                  <h4 class="card-header">@item.Price</h4>
+              </div>
+         </div>
+    }
+}
+
+<div>
+    <form asp-page-handler="Payment">
+        <button class="btn btn-primary">Pay with card</button>
+    </form>
+</div>
+
+

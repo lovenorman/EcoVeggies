@@ -1,0 +1,27 @@
+﻿@page 
+@model EcoVeggies.Pages.MoreInfoModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@if (Model.Item == null)
+{
+
+
+    <h1>No Product</h1>
+    <a asp-page="./Index">Back to all products</a>
+}
+else
+{
+<div class="card" style="width:18rem;">
+    <img class="card-img-top" src="@Model.Item.ImageSrc" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Item.Name</h5>
+        <h6 class="card-title">@Model.Item.Price</h6>
+        <p class="card-text">@Model.Item.Desc<span>...</span></p>
+        <a class="btn btn-primary" asp-page="/Index">Back To Products</a>
+        <a asp-page="/Cart" asp-route-id="@Model.Item.Id" class="btn btn-primary">Add to cart</a>
+    </div>
+
+</div>
+}

@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+
+</head>
+
+<div class="text-md-center">
+    <h1 id="store-name"><img id="green-cart" class="mr-2">Products</h1>
+    <p>Shop veggies online!</p>
+</div>
+
+<div class="input-group">
+    <form asp-page="/Index" method="get">
+        <div class="input-group">
+            <input type="text" class="form-control" value="" name="searchString" />
+            <span class="input-group-btn">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </span>
+        </div>
+    </form>
+</div>
+
+<div>
+    <form asp-page="/Index" asp-page-handler="Sort">
+        <select name="sortTerm" id="sortTerm" onchange="this.form.submit()">
+            <option>Sort by</option>
+            <option value="low">Lowest price</option>
+            <option value="high">Highest price</option>
+        </select>
+    </form>
+</div>
+
+
+
+<div class="d-flex justify-content-around flex-wrap">
+    @foreach (var item in Model.Products)
+    {
+        <div class="card w-25 m-3">
+            <img class="card-img-top" src=@item.ImageSrc alt=@item.Name>
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <h4 class="card-header">@item.Price</h4>
+                <a asp-page="/MoreInfo" asp-route-name="@item.Name" class="btn btn-primary">More Info</a>
+                <a asp-page="/Cart" asp-route-id="@item.Id" class="btn btn-primary">Add to cart</a>
+
+            </div>
+        </div>
+    }
+</div>

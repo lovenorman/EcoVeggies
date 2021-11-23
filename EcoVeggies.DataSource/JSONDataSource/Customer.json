@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "firstname": "Lisa",
+    "lastname": "Larsson",
+    "card": 101
+  },
+  {
+    "id": 2,
+    "firstname": "Love",
+    "lastname": "Norman",
+    "card": 102
+  },
+  {
+    "id": 3,
+    "firstname": "Lina",
+    "lastname": "Svensson",
+    "card": 103
+  },
+  {
+    "id": 4,
+    "firstname": "Elin",
+    "lastname": "Andersson",
+    "card": 104
+  },
+  {
+    "id": 5,
+    "firstname": "Elin",
+    "lastname": "Andersson",
+    "card": 105
+  }
+]

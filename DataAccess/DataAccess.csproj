@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EcoVeggies.DataSource\EcoVeggies.DataSource.csproj" />
+    <ProjectReference Include="..\EcoVeggies\EcoVeggies.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+</Project>
