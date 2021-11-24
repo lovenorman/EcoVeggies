@@ -1,0 +1,27 @@
+﻿@page
+@model EcoVeggies.Pages.ReceiptModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>@Model.feedback</h1>
+
+
+<div class="card-deck">
+    @{Model.thisOrder.IsPaid = true;}
+
+    @if (Model.thisOrder.IsPaid)
+    {
+        <h3 class="card-title">Order is paid</h3>
+    }
+    @foreach (var item in Model.ListCartItems)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <h4 class="card-title">@item.Price</h4>
+                <a asp-page="/index" class="btn btn-primary">back to home</a>
+            </div>
+        </div>
+    }
+</div>

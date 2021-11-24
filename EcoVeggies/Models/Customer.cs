@@ -14,7 +14,8 @@ namespace EcoVeggies.Models
         public string FirstName { get; set; }
         [JsonProperty("lastname")]
         public string LastName { get; set; }
-        [JsonProperty("card")]
-        public int Card { get; set; }
+        [JsonProperty("listorder")]
+        public List<Order> ListOrder { get; set; }
+        
     }
 }

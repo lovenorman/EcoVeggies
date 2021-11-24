@@ -14,10 +14,14 @@ namespace EcoVeggies.Models
         [JsonProperty("customerid")]
         public int CustomerId { get; set; }
 
-        public List<Item> ListCartItems { get; set; }
-        public Customer Customer { get; set; }
-
+        [JsonProperty("ispaid")]
         public bool IsPaid { get; set; } = false;
+
+        public List<Item> ListCartItems { get; set; }
+       
+        //public Customer Customer { get; set; }
+
+        
 
         //public Order(int orderId, int customerId, List<Item> listCartItems)
         //{

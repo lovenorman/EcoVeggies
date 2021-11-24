@@ -3,7 +3,7 @@
     "id": 1,
     "firstname": "Lisa",
     "lastname": "Larsson",
-    "card": 101
+    "orderlist" : ""
   },
   {
     "id": 2,

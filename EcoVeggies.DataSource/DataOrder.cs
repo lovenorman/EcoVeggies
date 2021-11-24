@@ -15,10 +15,9 @@ namespace EcoVeggies.DataSource
             return jsonResponse;
         }
 
-        public void Save(string serializedItems)//Needs string variabel, gets it from SaveItem() in "DesCart"
+        public void Save(string serializedItems)//Needs string variabel, gets it from SaveItem() in "DesOrder"
         {
-            //Takes in path from above and the string from SaveItem() "DesCart", saves it in JSON
-            File.WriteAllText(path, serializedItems);
+            File.WriteAllText(path, serializedItems);//Takes in path from above and the string from SaveItem() "DesOrder", saves it in JSON
         }
     }
 }

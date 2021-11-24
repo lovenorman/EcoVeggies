@@ -44,7 +44,7 @@ namespace EcoVeggies.Pages
             }
         }
 
-        public IActionResult OnPostPlaceOrder()
+        public IActionResult OnPostPlaceOrder()//Places order and directs to /Payment
         {
             return RedirectToPage("/Payment", new { id = CustomerId });//Saves CustomerId in "id" and sends to /Payment, OnGet()
         }

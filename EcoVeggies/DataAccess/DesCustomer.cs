@@ -26,8 +26,7 @@ namespace EcoVeggies.DataAccess
         public Customer GetById(int Id)
         {
             var customer = GetAll().ToList();
-            //Letar efter id som matchar i listan "customer" vi skapat
-            var matchedItem = customer.Find(customer => customer.Id == Id);
+            var matchedItem = customer.Find(customer => customer.Id == Id);//Letar efter id som matchar i listan "customer" vi skapat
             return matchedItem;
         }
 

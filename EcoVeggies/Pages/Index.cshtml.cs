@@ -13,12 +13,14 @@ namespace EcoVeggies.Pages
     public class IndexModel : PageModel
     {
         private readonly IProduct _product;
-        
+
         public List<Item> Products { get; set; }
         public List<Item> FoundItem { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
+        [BindProperty]
+        public string Sort { get; set; }
 
         //Constructor
         public IndexModel(IProduct product)
@@ -28,7 +30,7 @@ namespace EcoVeggies.Pages
         }
         public void OnPost()
         {
-           
+
         }
 
         public IActionResult OnGetAsync(string searchString)
@@ -39,15 +41,26 @@ namespace EcoVeggies.Pages
             }
             else
             {
-                //FoundItem = Products
-                //    .Where(a => a.Name.Contains(searchString))
-                //    .FirstOrDefault();
-
                 Products = Products.Where(p => p.Name.ToLower().Contains(searchString.ToLower())).ToList();
-                
             }
             return Page();
 
         }
+        public IActionResult OnPostSort()
+        {
+            switch (Sort)
+            {
+                case "low":
+                    Products = Products.OrderBy(o => o.Price).ToList();
+                    break;
+
+                case "high":
+                    Products = Products.OrderByDescending(o => o.Price).ToList();
+                    break;
+            }
+            return Page();
+        }
+
     }
+
 }

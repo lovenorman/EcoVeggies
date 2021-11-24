@@ -25,8 +25,8 @@
 </div>
 
 <div>
-    <form asp-page="/Index" asp-page-handler="Sort">
-        <select name="sortTerm" id="sortTerm" onchange="this.form.submit()">
+    <form asp-page-handler="Sort">
+        <select asp-for="Sort" id="sortTerm" onchange="this.form.submit()">
             <option>Sort by</option>
             <option value="low">Lowest price</option>
             <option value="high">Highest price</option>
