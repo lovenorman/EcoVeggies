@@ -24,4 +24,4 @@ Här visas din order, de varor du lagt till
 
 Receipt:
 Här visas ditt kvitto; varor du köpt och att köpet är betalt
--Tillbaka till home
+- Tillbaka till home
